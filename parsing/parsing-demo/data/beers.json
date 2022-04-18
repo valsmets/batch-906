@@ -1,0 +1,25 @@
+{
+  "title": "Beers",
+  "beers": [
+    {
+      "name": "Heineken",
+      "type": "Lager",
+      "region": "Holland"
+    },
+    {
+      "name": "La Chouffe",
+      "type": "Triple",
+      "region": "Belgium"
+    },
+    {
+      "name": "Guinness",
+      "type": "Stout",
+      "region": "Ireland"
+    },
+    {
+      "name": "Leffe",
+      "type": "Blond",
+      "region": "Belgium"
+    }
+  ]
+}
