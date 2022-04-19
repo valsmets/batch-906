@@ -1,3 +1,11 @@
+require_relative "christmas_list.rb"
+
+gift_list = [
+  # Create a hash for each gift
+  { name: "socks", marked: false},
+  { name: "Apple", marked: false}
+]
+
 # Welcome the user.
 puts "🌲 Welcome to your christmast list 🌲"
 # Display the actions.
@@ -6,23 +14,41 @@ puts "🌲 Welcome to your christmast list 🌲"
 user_action = ""
 
 until user_action == "quit"
-  puts "What do you want to do? | List | Add | Delete | or quit to exit"
+  puts "What do you want to do? | List | Add | Mark | Delete | or quit to exit"
   # The user will choose an action.
-  user_action = gets.chomp
+  user_action = gets.chomp.downcase
   # Check what action the user chooses
 
   # If the user chooses Add
-  #     Ask the user what they want to add
-  #     Get from the user what gift they want to add
-  #     Add the user choice to the list (array)
+  case user_action
+  when "add"
+    # Ask the user what they want to add
+    puts "What do you want to add?"
+    # Get from the user what gift they want to add
+    gift = gets.chomp
+    # Add the user choice to the list (array)
+    gift_list << gift
 
-  # If the user chooses list
-  #     Display the list
-  #     Optional: If there is nothing in the list, tell the user the list is empty
+    when "list"
+      # If the user chooses list
+      puts "Your wishlist:"
+      # Display the list
+      display_list(gift_list)
 
-  # If the user chooses Delete
-  #     Show them the list to choose which item to delete
-  #     Get the user's choice
-  #     Delete item from the list
+    when "delete"
+      # If the user chooses Delete
+      puts "What do you want to delete? (Enter a number)"
+        # Show them the list to choose which item to delete
+      display_list(gift_list)
+      # Get the user's choice
+      gift_to_delete = gets.chomp.to_i
+      # Delete item from the list
+      gift_list.delete_at(gift_to_delete - 1)
+      when "Mark"
+        # Ask the user which item to mark
+        # get the index of the item to mark
+        # Update the gift in ur list that is marked
+        # list the items
+    end
 end
 
